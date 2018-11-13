@@ -20,7 +20,7 @@ for n in range(0, len(onlyfiles)):
   
   
   cv2.imshow("Image", images[n])
-  text = pytesseract.image_to_string(images[n])
+  text = pytesseract.image_to_string(images[n],config=' -c tessedit_char_whitelist=0123456789abcdefghijklmnopqrstuvwxyz')
   print(text)
   out = open('out2.csv', 'a')
   l=[text]
